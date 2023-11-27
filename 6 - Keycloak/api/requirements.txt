@@ -1,7 +1,3 @@
-fastapi
-uvicorn
-sqlalchemy
-pymysql
-pydantic
-parameterized
-fastapi_keycloak
+flask
+flask-OIDC
+oauth2client
