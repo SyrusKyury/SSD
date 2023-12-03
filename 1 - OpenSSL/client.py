@@ -52,6 +52,9 @@ def generate_certification_request(private_key, common_name, organization_name, 
     with open(path, "wb") as f:
         f.write(csr.public_bytes(serialization.Encoding.PEM))
 
+print("_____________________________")
+print(os.getcwd())
+
 common_name = input("common_name >> ")
 organization_name = input("organization_name >> ")
 locality_name = input("locality_name >> ")

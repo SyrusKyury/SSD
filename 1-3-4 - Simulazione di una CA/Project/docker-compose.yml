@@ -1,0 +1,63 @@
+networks:
+  internet:
+  client_vault_connection:
+  server_vault_connection:
+
+services:
+
+  server_api:
+    build:
+      context: server/api
+      dockerfile: Dockerfile
+    ports:
+      - 1200:1200
+    volumes:
+      - ./server/api/src:/app
+    restart: on-failure:2
+    networks:
+      - internet
+      - server_vault_connection
+
+  server_vault:
+    image: vault:1.4.1
+    ports:
+      - 8200:8200
+    restart: always
+    volumes:
+      - ./server/vault/logs:/vault/logs
+      - ./server/vault/file:/vault/file
+      - ./server/vault/config:/vault/config
+      - ./server/vault/ssl:/vault/ssl
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -config /vault/config/config.hcl
+    networks:
+      - server_vault_connection
+
+  client_python:
+      image: ca_client_python
+      build:
+        context: ./client/python
+        dockerfile: Dockerfile
+      tty: true
+      volumes:
+        - ./client/python/app:/app
+      networks:
+        - internet
+        - client_vault_connection
+
+  client_vault:
+    image: vault:1.4.1
+    ports:
+      - 8100:8200
+    restart: always
+    volumes:
+      - ./client/vault/logs:/vault/logs
+      - ./client/vault/file:/vault/file
+      - ./client/vault/config:/vault/config
+      - ./client/vault/ssl:/vault/ssl
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -config /vault/config/config.hcl
+    networks:
+      - client_vault_connection

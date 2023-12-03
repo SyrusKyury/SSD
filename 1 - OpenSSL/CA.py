@@ -91,12 +91,12 @@ def generate_certificate(private_key, path, **kwargs):
 
     return public_key
 
-def accept_pending_request(path, common_name, private_key):
+def accept_pending_request(certificate, path, common_name, private_key):
 
         csr = x509.load_pem_x509_csr(open(path, "rb").read(), default_backend())
 
         builder = x509.CertificateBuilder(
-            issuer_name=csr.subject,
+            issuer_name=certificate.subject,
             subject_name=csr.subject,
             public_key=csr.public_key(),
             serial_number=x509.random_serial_number(),
@@ -125,7 +125,7 @@ public_key = certificate.public_key()
 pending_requests = os.listdir(path + "pending_requests/")
 print("Accepting pending requests...")
 for request in pending_requests:
-    accept_pending_request(path + "pending_requests/" + request, request[:-4], private_key)
+    accept_pending_request(certificate, path + "pending_requests/" + request, request[:-4], private_key)
     print("Accepted " + request)
 
 print("Done.")

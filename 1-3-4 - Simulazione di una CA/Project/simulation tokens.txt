@@ -1,0 +1,25 @@
+-----------------------------------------------------
+Client
+-----------------------------------------------------
+
+File
+Enter the username for the authentication: admin
+Here is your token: FwHxPFfT8&lqVhRyVyok7Pl9#m^XOh(y
+-----------------------------------------------------
+Vault
+Token1: e2d81e76007634a32f7f82a141861f0f0f6b1dc78f417fb65efb79b8f3744286
+Token2: s.9yximMKAgd7W5eeGBtNGFwZN
+
+-----------------------------------------------------
+Server
+-----------------------------------------------------
+
+File
+Enter the username for the authentication: admin
+Here is your token: gBhx*Rob72u*u2J@NL82of9rm=9sGCjU
+-----------------------------------------------------
+Vault
+Token1: b86c735096ae870aeda70ed95ff960453cbcfd6c98acbfed98e03062d13dfcd8
+Token2: s.ebkrc3l28MAoKeWswMH3SzMW
+
+-----------------------------------------------------
