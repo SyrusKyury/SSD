@@ -1,0 +1,20 @@
+{
+    "client_secrets": {
+        "web": {
+          "client_id": "flask",
+          "client_secret": "d2f91886-dd2e-4c33-abf1-4835a097d7ca",
+          "redirect_uris": ["http://localhost:1200/callback"],
+          "issuer": "http://localhost:8080/auth/realms/homework"
+        }
+    },
+
+    "keycloak_openid": {
+        "server_url": "http://localhost:8080/auth",
+        "client_id": "flask",
+        "realm_name": "homework",
+        "client_secret_key": "d2f91886-dd2e-4c33-abf1-4835a097d7ca"
+    },
+
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkJN/+HtfKJsrOTKCXvR+vhsuvSC0OpP+yu2FhMaSLsIu9jlqL6ThAB/kQS2v9jkWq8+Y6ICVBLY6w6gmJorG/XI3bE6hT0vKvINRDJutUq//Cot/lviMVuri+1KcZfolRAvDXHt/G3390KHR29VxLf913R3xaFl0SuX2IzE5f09xJTvaQnFNFcMAiPVJm6/eZQnfl3p56rKbWG3VXiozwEOF5ZCwEvlAIdXsDr9oAbYhIr0Jqv7FCrzNZm1iOKwi9jU/zhU8cgOTQ/kaGHXWNKbMHpvH1aBTxyEWbHJ7y9eHjcA7tM9O7xRKTlYS687yLI/X8XISZP7fiV/ISfbGhQIDAQAB\n-----END PUBLIC KEY-----"
+
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pannello di controllo</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+            margin-top: 150px;
+        }
+
+        p {
+            color: #666666;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button_private {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #124bbd;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .button_private:hover {
+            background-color: #0d3992;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pannello di controllo di {{ username }}</h1>
+    <a href="/log_out" class="button">Logout</a>
+    <a href="/" class="button_private">Homepage</a>
+</body>
+</html>
