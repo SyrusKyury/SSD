@@ -1,0 +1,6 @@
+ldap3
+flask
+flask-WTF
+Flask-Login
+flask-sqlalchemy
+requests
