@@ -1,5 +1,5 @@
 # AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
-# CRC32 57c0a3e4
+# CRC32 a4ea6cba
 dn: cn=config
 objectClass: olcGlobal
 cn: config
@@ -19,6 +19,6 @@ olcTLSCertificateFile: /container/service/slapd/assets/certs/server.crt
 olcTLSCertificateKeyFile: /container/service/slapd/assets/certs/server.key
 olcTLSDHParamFile: /container/service/slapd/assets/certs/dhparam.pem
 olcTLSVerifyClient: demand
-entryCSN: 20231212182934.970424Z#000000#000#000000
+entryCSN: 20231214095740.235257Z#000000#000#000000
 modifiersName: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-modifyTimestamp: 20231212182934Z
+modifyTimestamp: 20231214095740Z

@@ -1,6 +1,7 @@
 from flask import request, render_template, flash, redirect, url_for, Blueprint, g
 from flask_login import current_user, login_user, logout_user, login_required
 from data import login_manager,db
+from data import settings
 import requests
 import json
 
@@ -9,7 +10,7 @@ auth = Blueprint('auth', __name__)
 from data.auth.models import User,LoginForm
 
 def xacml_evaluation(role : str, action : str, resource : str):
-    url = 'http://spring:8080/xacml'
+    url = settings["XACML_SERVER_URL"]
     headers = {"Content-Type": "application/json"}
     body = { 'role': role, 'resource': resource, 'action': action }
     json_body = json.dumps(body)
@@ -69,6 +70,7 @@ def login():
         login_user(user)
         # Update user role
         current_user.role = role
+
         flash('You have successfully logged in.', 'success')
 
         return redirect(url_for('auth.home'))

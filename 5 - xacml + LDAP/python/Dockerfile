@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ./app /app
 
 ENTRYPOINT ["python3"]
-CMD ["/app/app.py"]
+CMD ["app.py", "admin", "V$fu+Xkdnh5pAorpf(9v+(@SZ2E3h7(="]

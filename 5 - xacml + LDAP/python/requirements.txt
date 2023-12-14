@@ -4,3 +4,4 @@ flask-WTF
 Flask-Login
 flask-sqlalchemy
 requests
+cryptography

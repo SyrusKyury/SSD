@@ -3,6 +3,7 @@ from wtforms import StringField,PasswordField
 from wtforms import validators
 from ldap3 import Server, Connection
 from data import db, app
+from data import settings
 import json
 import sys
 
@@ -24,13 +25,13 @@ class User(db.Model):
     def try_login(username, password):
         with Connection(Server(app.config['LDAP_PROVIDER_URL'], app.config['LDAP_PROVIDER_PORT']), user='cn=%s,dc=ramhlocal,dc=com' % username, password='%s' % password) as conn:
             pass
-        with Connection(Server (app.config['LDAP_PROVIDER_URL'], app.config['LDAP_PROVIDER_PORT']), user='cn=admin,dc=ramhlocal,dc=com', password='admin_pass') as conn:
+        with Connection(Server (app.config['LDAP_PROVIDER_URL'], app.config['LDAP_PROVIDER_PORT']), user=settings["LDAP_ADMIN_DN"], password=settings["LDAP_ADMIN_PASSWORD"]) as conn:
             conn.search('dc=ramhlocal,dc=com', '(objectClass=person)')
             # If user is in LDAP, check if he is not admin
             for entry in conn.entries:
                 if username in json.loads(entry.entry_to_json())['dn']:
-                    return 'user'
-            return 'admin'
+                    return settings["USER_ROLE_NAME"]
+            return settings["ADMIN_ROLE_NAME"]
 
     def is_authenticated(self):
         return True

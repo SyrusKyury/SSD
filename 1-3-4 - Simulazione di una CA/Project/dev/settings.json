@@ -1,0 +1,12 @@
+{
+    "SQLALCHEMY_DATABASE_URI" : "sqlite:////tmp/database.db",
+    "LDAP_PROVIDER_URL" : "openldap",
+    "LDAP_PROVIDER_PORT" : 389,
+    "LDAP_ADMIN_DN" : "cn=admin,dc=ramhlocal,dc=com",
+    "LDAP_ADMIN_PASSWORD" : "admin_pass",
+
+    "USER_ROLE_NAME" : "user",
+    "ADMIN_ROLE_NAME" : "admin",
+
+    "XACML_SERVER_URL" : "http://spring:8080/xacml"
+}
