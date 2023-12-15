@@ -20,7 +20,21 @@ services:
         DB_PASSWORD: password
         KEYCLOAK_USER: admin
         KEYCLOAK_PASSWORD: admin
+        PROXY_ADDRESS_FORWARDING: "true"
       ports:
-        - 8080:8080
+        - 8081:8080
       depends_on:
         - postgres
+
+  web:
+      container_name: web_server
+      image: nginx:latest
+      ports:
+        - 80:80
+        - 443:443
+      volumes:
+        - ./nginx/www:/code
+        - ./nginx/site.conf:/etc/nginx/conf.d/default.conf
+        - ./nginx/ssl:/ssl
+      depends_on:
+        - keycloak
