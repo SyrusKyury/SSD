@@ -4,12 +4,12 @@
           "client_id": "flask",
           "client_secret": "d2f91886-dd2e-4c33-abf1-4835a097d7ca",
           "redirect_uris": ["http://localhost:1200/callback"],
-          "issuer": "http://localhost:8080/auth/realms/homework"
+          "issuer": "http://localhost/auth/realms/homework"
         }
     },
 
     "keycloak_openid": {
-        "server_url": "http://localhost:8080/auth",
+        "server_url": "http://localhost/auth",
         "client_id": "flask",
         "realm_name": "homework",
         "client_secret_key": "d2f91886-dd2e-4c33-abf1-4835a097d7ca"

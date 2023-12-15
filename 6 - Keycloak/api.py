@@ -88,9 +88,7 @@ if __name__ == '__main__':
     # To decrypt the file, the user must provide username and password
     try:
         # Decrypt the file with flask credentials
-        #data = json.loads(decrypt_file('flask.enc', sys.argv[1], sys.argv[2]))
-        with open('flask.json') as json_file:
-            data = json.loads(json_file.read())
+        data = json.loads(decrypt_file('flask.enc', sys.argv[1], sys.argv[2]))
     except Exception:
         print("Error while initializing the server:")
         print("Exiting...")
