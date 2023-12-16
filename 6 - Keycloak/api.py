@@ -13,7 +13,6 @@ from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 
-
 logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)

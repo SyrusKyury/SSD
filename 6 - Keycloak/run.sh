@@ -1,0 +1,1 @@
+python3 ./api.py admin 'k%!jAjcjdx+=lLUOd#9Me(!9oYqx8vL)'

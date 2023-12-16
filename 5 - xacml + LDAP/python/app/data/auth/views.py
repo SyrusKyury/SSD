@@ -98,3 +98,27 @@ def private():
         return 'This is a private page.'
     else:
         return render_template('forbidden.html')
+
+@auth.route('/AG')
+@login_required
+def AG():
+    username = current_user.username.lower()
+    action = 'GET'
+    resource = 'http://localhost:1200/AG/*'
+    print(current_user.username, username, action, resource)
+    if xacml_evaluation(username, action, resource):
+        return 'This is a page for AG.'
+    else:
+        return render_template('forbidden.html')
+
+@auth.route('/HZ')
+@login_required
+def HZ():
+    username = current_user.username.lower()
+    action = 'GET'
+    resource = 'http://localhost:1200/HZ/*'
+    print(current_user.username, username, action, resource)
+    if xacml_evaluation(username, action, resource):
+        return 'This is a page for HZ.'
+    else:
+        return render_template('forbidden.html')
