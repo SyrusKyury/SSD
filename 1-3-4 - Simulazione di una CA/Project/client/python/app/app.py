@@ -100,13 +100,13 @@ print("Certification request built.")
 print("_"*50)
 
 # Send the certification request
-sever_url = "https://server_api:1200/sign"
+server_url = "https://server_api:1200/sign"
 PARAMS = {'certificate':csr.public_bytes(serialization.Encoding.PEM).decode('utf-8'), 'client_id':client_id}
 
 # Sending get request and saving the response as response object
 print("Sending the certification request to the certification authority...")
 try:
-    r = requests.get(url = sever_url, verify=False, params = PARAMS)
+    r = requests.get(url = server_url, verify=False, params = PARAMS)
 except Exception as e:
     print("Something went wrong while sending the certification request. Check your connection")
     print("Exiting...")

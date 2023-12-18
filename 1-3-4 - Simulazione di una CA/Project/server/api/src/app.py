@@ -33,6 +33,7 @@ def before_request():
     g.data_path = global_data_path
     g.storage_key = global_storage_key
 
+# Route for signing a certificate
 @app.get("/sign")
 def sign_certificate():
     certificate_request = request.args.get('certificate')
@@ -106,6 +107,7 @@ def sign_certificate():
 
     return accepted_certificate
 
+# Route for retrieving a certificate
 @app.get("/get_certificate")
 def get_certificate():
     requested_certificate_name = request.args.get('certificate_name')
@@ -124,6 +126,7 @@ def get_certificate():
     with open(os.path.join(ASSETS_DIR, 'public', requested_certificate_name), 'rb') as key_file:
         return key_file.read().decode('utf-8')
 
+# Route for downloading a certificate
 @app.get("/download_certificate")
 def download_certificate():
     requested_certificate_name = request.args.get('certificate_name')
